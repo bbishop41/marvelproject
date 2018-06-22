@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
+import { Hero } from '../models/hero';
+import { HEROES } from '../models/mock-heroes';
 
 @Injectable()
 export class HeroService {
@@ -8,7 +10,7 @@ export class HeroService {
   constructor(private http: HttpClient) {
   }
 
-  getAll(): Observable<any> {
-    return this.http.get('//localhost:8080/characters');
+  getHeroes(): Observable<Hero[]> {
+    return of(HEROES);
   }
 }

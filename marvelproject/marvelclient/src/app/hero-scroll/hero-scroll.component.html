@@ -1,7 +1,9 @@
-<h2>HeroList</h2>
+<h1> HERO LIST </h1>
 
-<div *ngFor="let hero of heroes">
-  {{hero.id}}
-  {{hero.name}}
-  <img src="{{hero.thumbnail.path}}.{{hero.thumbnail.extension}}"/>
+<div class="row">
+  <div class="column" *ngFor="let hero of heroes">
+      <img src="{{hero.imageUrl}}"/>
+  </div>
 </div>
+
+
