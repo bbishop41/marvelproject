@@ -1,9 +1,15 @@
-<h1> HERO LIST </h1>
 
 <div class="row">
   <div class="column" *ngFor="let hero of heroes">
-      <img src="{{hero.imageUrl}}"/>
+    <mat-card class="hero-card">
+      <mat-card-title>
+        {{hero.name}}
+      </mat-card-title>
+      <img mat-card-image src="{{hero.imageUrl}}">
+    </mat-card>
   </div>
 </div>
+
+
 
 

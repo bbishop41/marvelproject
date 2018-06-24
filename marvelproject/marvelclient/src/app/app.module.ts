@@ -5,6 +5,9 @@ import { AppComponent } from './app.component';
 import { HeroScrollComponent } from './hero-scroll/hero-scroll.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HeroService } from './services/hero.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatCardModule } from "@angular/material";
+import { MatToolbarModule } from "@angular/material";
 
 @NgModule({
   declarations: [
@@ -13,7 +16,10 @@ import { HeroService } from './services/hero.service';
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatCardModule,
+    MatToolbarModule
   ],
   providers: [HeroService],
   bootstrap: [AppComponent]
