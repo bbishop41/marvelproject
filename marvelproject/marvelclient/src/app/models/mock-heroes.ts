@@ -33,7 +33,7 @@ export const HEROES: Hero[] = [
   },
   {
     id: 1009187,
-    name: 'Black Panter',
+    name: 'Black Panther',
     imageUrl: '/assets/blackpanther.jpg',
     description: 'T\'Challa is the Black Panther – a righteous king, noble Avenger, and fearsome warrior. Under his leadership, the African nation of Wakanda has flourished as one of the most technologically advanced countries in the world. And though he’s a card-carrying member of the Avengers, his first loyalty lies with his people, and he will defend them to his last breath.'
   },
