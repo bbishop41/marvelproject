@@ -26,21 +26,22 @@ import java.util.List;
  */
 public class CharacterService {
 
+    @Autowired
     private RestTemplate restTemplate;
+
+    @Autowired
+    private ObjectMapper mapper;
+
     private UriComponents uriComponents;
 
     public List<Hero> getCharacterList(){
         String url = generateUrl("/characters", "");
-        restTemplate = new RestTemplateBuilder().build();
-        ObjectMapper mapper = new ObjectMapper();
         ResponseWrapper response = restTemplate.getForObject(url, ResponseWrapper.class);
         return mapper.convertValue(response.getData().getResults(), new TypeReference<List<Hero>>() { });
     }
 
     public Hero getHero(Integer id) {
         String url = generateUrl("/characters", "/" + id);
-        restTemplate = new RestTemplateBuilder().build();
-        ObjectMapper mapper = new ObjectMapper();
         ResponseWrapper response = restTemplate.getForObject(url, ResponseWrapper.class);
         return mapper.convertValue(response.getData().getResults().get(0), new TypeReference<Hero>() { });
     }

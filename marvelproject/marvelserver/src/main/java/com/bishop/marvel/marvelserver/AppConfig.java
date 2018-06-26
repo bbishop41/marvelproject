@@ -1,7 +1,6 @@
 package com.bishop.marvel.marvelserver;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.web.client.RestTemplateBuilder;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.client.RestTemplate;
@@ -14,8 +13,12 @@ import org.springframework.web.client.RestTemplate;
 public class AppConfig {
 
     @Bean
-    @Autowired
-    public RestTemplate RestTemplate(RestTemplateBuilder builder) {
-        return builder.build();
+    public RestTemplate RestTemplate() {
+        return new RestTemplate();
+    }
+
+    @Bean
+    public ObjectMapper ObjectMapper() {
+        return new ObjectMapper();
     }
 }
