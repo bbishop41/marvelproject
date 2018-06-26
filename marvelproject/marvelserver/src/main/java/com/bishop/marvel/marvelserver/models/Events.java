@@ -25,7 +25,7 @@ public class Events {
     @JsonProperty("collectionURI")
     private String collectionURI;
     @JsonProperty("items")
-    private List<Item___> items = null;
+    private List<EventItem> items = null;
     @JsonProperty("returned")
     private Integer returned;
     @JsonIgnore
@@ -52,12 +52,12 @@ public class Events {
     }
 
     @JsonProperty("items")
-    public List<Item___> getItems() {
+    public List<EventItem> getItems() {
         return items;
     }
 
     @JsonProperty("items")
-    public void setItems(List<Item___> items) {
+    public void setItems(List<EventItem> items) {
         this.items = items;
     }
 

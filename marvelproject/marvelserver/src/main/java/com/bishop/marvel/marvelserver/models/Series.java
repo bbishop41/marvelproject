@@ -25,7 +25,7 @@ public class Series {
     @JsonProperty("collectionURI")
     private String collectionURI;
     @JsonProperty("items")
-    private List<Item_> items = null;
+    private List<SeriesItem> items = null;
     @JsonProperty("returned")
     private Integer returned;
     @JsonIgnore
@@ -52,12 +52,12 @@ public class Series {
     }
 
     @JsonProperty("items")
-    public List<Item_> getItems() {
+    public List<SeriesItem> getItems() {
         return items;
     }
 
     @JsonProperty("items")
-    public void setItems(List<Item_> items) {
+    public void setItems(List<SeriesItem> items) {
         this.items = items;
     }
 

@@ -15,7 +15,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "resourceURI",
     "name"
 })
-public class Item {
+public class EventItem {
 
     @JsonProperty("resourceURI")
     private String resourceURI;

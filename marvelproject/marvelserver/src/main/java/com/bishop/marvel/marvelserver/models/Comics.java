@@ -15,7 +15,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 @JsonPropertyOrder({
     "available",
     "collectionURI",
-    "items",
+    "comicItems",
     "returned"
 })
 public class Comics {
@@ -24,8 +24,8 @@ public class Comics {
     private Integer available;
     @JsonProperty("collectionURI")
     private String collectionURI;
-    @JsonProperty("items")
-    private List<Item> items = null;
+    @JsonProperty("comicItems")
+    private List<ComicItem> comicItems = null;
     @JsonProperty("returned")
     private Integer returned;
     @JsonIgnore
@@ -51,14 +51,14 @@ public class Comics {
         this.collectionURI = collectionURI;
     }
 
-    @JsonProperty("items")
-    public List<Item> getItems() {
-        return items;
+    @JsonProperty("comicItems")
+    public List<ComicItem> getComicItems() {
+        return comicItems;
     }
 
-    @JsonProperty("items")
-    public void setItems(List<Item> items) {
-        this.items = items;
+    @JsonProperty("comicItems")
+    public void setComicItems(List<ComicItem> comicItems) {
+        this.comicItems = comicItems;
     }
 
     @JsonProperty("returned")

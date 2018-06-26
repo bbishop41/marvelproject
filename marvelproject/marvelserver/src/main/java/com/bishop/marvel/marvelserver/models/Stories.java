@@ -25,7 +25,7 @@ public class Stories {
     @JsonProperty("collectionURI")
     private String collectionURI;
     @JsonProperty("items")
-    private List<Item__> items = null;
+    private List<StoriesItem> items = null;
     @JsonProperty("returned")
     private Integer returned;
     @JsonIgnore
@@ -52,12 +52,12 @@ public class Stories {
     }
 
     @JsonProperty("items")
-    public List<Item__> getItems() {
+    public List<StoriesItem> getItems() {
         return items;
     }
 
     @JsonProperty("items")
-    public void setItems(List<Item__> items) {
+    public void setItems(List<StoriesItem> items) {
         this.items = items;
     }
 

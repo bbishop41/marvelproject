@@ -30,20 +30,28 @@ public class CharacterService {
     private UriComponents uriComponents;
 
     public List<Hero> getCharacterList(){
-        String url = generateUrl("/characters");
+        String url = generateUrl("/characters", "");
         restTemplate = new RestTemplateBuilder().build();
         ObjectMapper mapper = new ObjectMapper();
         ResponseWrapper response = restTemplate.getForObject(url, ResponseWrapper.class);
         return mapper.convertValue(response.getData().getResults(), new TypeReference<List<Hero>>() { });
     }
 
-    private String generateUrl(String endpoint) {
+    public Hero getHero(Integer id) {
+        String url = generateUrl("/characters", "/" + id);
+        restTemplate = new RestTemplateBuilder().build();
+        ObjectMapper mapper = new ObjectMapper();
+        ResponseWrapper response = restTemplate.getForObject(url, ResponseWrapper.class);
+        return mapper.convertValue(response.getData().getResults().get(0), new TypeReference<Hero>() { });
+    }
+
+    private String generateUrl(String endpoint, String pathParams) {
         Date date = new Date();
         String timeStamp = new Timestamp(date.getTime()).toString();
         uriComponents = UriComponentsBuilder.newInstance()
         .scheme(Constants.scheme)
         .host(Constants.marvelHost)
-        .path(Constants.marvelPathPrefix + endpoint)
+        .path(Constants.marvelPathPrefix + endpoint + pathParams)
         .queryParam("ts", timeStamp)
         .queryParam("apikey", Constants.publicKey)
         .queryParam("hash", MD5Util.hash(Constants.publicKey, Constants.privateKey, timeStamp))
